@@ -1,4 +1,4 @@
-import { TextureLoader } from 'three';
+import { NearestFilter, TextureLoader } from 'three';
 import {
     dirtImg,
     grassImg,
@@ -13,6 +13,14 @@ const glassTexture = new TextureLoader().load(glassImg);
 const woodTexture = new TextureLoader().load(woodImg);
 const logTexture = new TextureLoader().load(logImg);
 const groundTexture = new TextureLoader().load(grassImg);
+
+// focus the images
+dirtTexture.magFilter = NearestFilter;
+grassTexture.magFilter = NearestFilter;
+glassTexture.magFilter = NearestFilter;
+woodTexture.magFilter = NearestFilter;
+logTexture.magFilter = NearestFilter;
+groundTexture.magFilter = NearestFilter;
 
 export {
     dirtTexture,
